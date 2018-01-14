@@ -8,10 +8,10 @@ ST = TW
 L = Taipei
 O = hwchiu
 OU = hwchiu
-CN = 192.168.0.110
+CN = @CN@
 [v3_req]
 keyUsage = critical, digitalSignature, keyAgreement
 extendedKeyUsage = serverAuth
-subjectAltName = IP:192.168.0.110
+subjectAltName = IP:@CN@
 [v3_ca]
-subjectAltName = IP:192.168.0.110
+subjectAltName = IP:@CN@
