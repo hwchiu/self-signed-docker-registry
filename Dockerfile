@@ -9,3 +9,4 @@ ENV OUTPUT=domain.crt
 ENV KEY_OUTPUT=domain.key
 
 ENTRYPOINT ["/entrypoint.sh"]
+CMD ["serve", "/etc/docker/registry/config.yml"]
