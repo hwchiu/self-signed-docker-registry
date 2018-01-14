@@ -1,7 +1,8 @@
-#!/bin/bash
+#!/bin/sh
+echo $@
 set -e
 
-function create_certificate()
+create_certificate()
 {
 WORKDIR=/
 KEYPATH=${WORKDIR}${KEY_OUTPUT}
@@ -12,12 +13,11 @@ export REGISTRY_HTTP_TLS_KEY=${CERTPATH}
 }
 
 
-case "$!" in
+case "$1" in
     *.yaml|*.yml) set -- registry serve "$@" ;;
     serve|garbage-collect|help|-*) set -- registry "$@";;
 esac
 
-
 create_certificate
-
+echo $@
 exec "$@"
