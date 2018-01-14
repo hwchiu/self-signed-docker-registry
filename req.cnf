@@ -12,6 +12,5 @@ CN = @CN@
 [v3_req]
 keyUsage = critical, digitalSignature, keyAgreement
 extendedKeyUsage = serverAuth
-subjectAltName = IP:@CN@
 [v3_ca]
 subjectAltName = IP:@CN@
