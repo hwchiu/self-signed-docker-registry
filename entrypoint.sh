@@ -11,6 +11,11 @@ sed -ie "s/@CN@/$CN/g" req.cnf
 openssl req -newkey rsa:4096 -nodes -sha256 -keyout ${KEYPATH} -x509 -days 36500 -out ${CERTPATH} -config req.cnf
 export REGISTRY_HTTP_TLS_CERTIFICATE=${CERTPATH}
 export REGISTRY_HTTP_TLS_KEY=${KEYPATH}
+
+if [ -d $DIRECTORY ]; then
+    cp $KEYPATH $DIRECTORY/$KEY_OUTPUT
+    cp $CERTPATH $DIRECTORY/$OUTPUT
+fi
 }
 
 

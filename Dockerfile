@@ -7,7 +7,8 @@ RUN apk add --no-cache openssl
 
 ENV OUTPUT=domain.crt
 ENV KEY_OUTPUT=domain.key
-ENV CN=localhost
+ENV CN=192.168.1.1
+ENV DIRECTORY
 
 ENTRYPOINT ["/entrypoint.sh"]
 CMD ["serve", "/etc/docker/registry/config.yml"]
